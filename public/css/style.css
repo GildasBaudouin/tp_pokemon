@@ -1,7 +1,9 @@
 #pokemonDiv {
+    margin-top: 50px;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    place-items: center;
 }
 
 a {
@@ -13,6 +15,7 @@ img {
 }
 
 .pokemon_card {
+
     border-radius: 5px ;
     border: 2px solid black;
 }
@@ -21,8 +24,12 @@ img {
     max-width: 20%;
 }
 
+.pokeball {
+    margin: 0 auto;
+}
+
 #detailPokemon {
-    max-width: 1000px;
+    max-width: 70%;
     margin: auto;
     padding: 5px;
     text-align: justify;
