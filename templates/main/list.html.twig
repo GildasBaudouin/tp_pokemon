@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+
+ <a href="{{ path('pokemon_list', {'tri': 'est_capture'})}}" >trier par pokemon capturé</a>
+ <a href="{{ path('pokemon_list', {'tri': 'nom'})}}">Trié par nom</a>
+
+ <hr>
+
+ <section id="pokemonDiv">
+   {% for pokemon in pokemonList %}
+    <div class="pokemon_card">
+        <div class="pokeball">
+            {{ pokemon.nom }}
+            <img src="{{ pokemon.estCapture ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg')  }}">
+        </div>
+        <a href="{{ path('pokemon_details', {'id': pokemon.id})}}">
+        <img src="{{ asset('img/pokemon/'~pokemon.nom ) }}" alt="">
+        </a>
+        <hr>
+        <a href="{{ path('pokemon_capture',  {'id': pokemon.id })}}">{{ pokemon.estCapture ? 'Relaché' : 'Capturé'  }}</a>
+    </div>
+  {% endfor %}
+ </section>
+
+
+{% endblock %}
+
+

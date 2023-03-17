@@ -1,0 +1,31 @@
+#pokemonDiv {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+img {
+    max-width: 100%;
+}
+
+.pokemon_card {
+    border-radius: 5px ;
+    border: 2px solid black;
+}
+
+.pokeball>img {
+    max-width: 20%;
+}
+
+#detailPokemon {
+    max-width: 1000px;
+    margin: auto;
+    padding: 5px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*.pokeball {*/
+/*    display: block;*/
+/*    margin: auto;*/
+/*}*/
