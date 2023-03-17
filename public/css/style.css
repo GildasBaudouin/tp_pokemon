@@ -4,6 +4,10 @@
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
 }
 
+a {
+    text-decoration: none;
+}
+
 img {
     max-width: 100%;
 }
@@ -25,7 +29,14 @@ img {
     text-justify: inter-word;
 }
 
+.statusPokemon {
+    text-align: right;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
 /*.pokeball {*/
 /*    display: block;*/
 /*    margin: auto;*/
 /*}*/
+

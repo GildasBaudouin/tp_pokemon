@@ -6,26 +6,28 @@
 
 {% block body %}
 
- <a href="{{ path('pokemon_list', {'tri': 'est_capture'})}}" >trier par pokemon capturé</a>
- <a href="{{ path('pokemon_list', {'tri': 'nom'})}}">Trié par nom</a>
+    <a href="{{ path('pokemon_list', {'tri': 'est_capture'}) }}">Trier par pokemon capturé |</a>
+    <a href="{{ path('pokemon_list', {'tri': 'nom'}) }}">Trier par nom</a>
 
- <hr>
+    <hr>
 
- <section id="pokemonDiv">
-   {% for pokemon in pokemonList %}
-    <div class="pokemon_card">
-        <div class="pokeball">
-            {{ pokemon.nom }}
-            <img src="{{ pokemon.estCapture ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg')  }}">
-        </div>
-        <a href="{{ path('pokemon_details', {'id': pokemon.id})}}">
-        <img src="{{ asset('img/pokemon/'~pokemon.nom ) }}" alt="">
-        </a>
-        <hr>
-        <a href="{{ path('pokemon_capture',  {'id': pokemon.id })}}">{{ pokemon.estCapture ? 'Relaché' : 'Capturé'  }}</a>
-    </div>
-  {% endfor %}
- </section>
+    <section id="pokemonDiv">
+        {% for pokemon in pokemonList %}
+            <div class="pokemon_card">
+                <div class="pokeball">
+                    <b>{{ pokemon.nom }}</b>
+                    <img src="{{ pokemon.estCapture ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg') }}">
+                </div>
+                <a href="{{ path('pokemon_details', {'id': pokemon.id}) }}">
+                    <img src="{{asset('img/pokemon/'~pokemon.image)}}" alt="">
+                </a>
+                <hr>
+                <div class="statusPokemon">
+                    <a href="{{ path('pokemon_capture',  {'id': pokemon.id }) }}">{{ pokemon.estCapture ? 'Relaché' : 'Capturé' }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
 
 
 {% endblock %}
