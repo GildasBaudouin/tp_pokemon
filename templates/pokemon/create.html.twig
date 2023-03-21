@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Create a new pokemon | {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Création de pokemon</h1>
+        {# balise form ouvrante #}
+        {{ form_start (pokemonForm) }}
+
+        <div class="pokemonForm">
+            {# affiche tous les champs du formulaire #}
+           {{ form_row(pokemonForm.nom) }}
+           {{ form_row(pokemonForm.description) }}
+           {{ form_row(pokemonForm.attaque) }}
+           {{ form_row(pokemonForm.defense) }}
+            {{ form_row(pokemonForm.image) }}
+{#            <label for="{{ field_name(pokemonForm.image) }}"></label>#}
+{#            <input type="file" id="{{ field_name(pokemonForm.nom) }}">#}
+        </div>
+
+
+
+        <button>Create</button>
+        {# balise form fermante #}
+        {{ form_end(pokemonForm) }}
+
+
+{% endblock %}
